@@ -1,6 +1,5 @@
-﻿using System;
+﻿using FacebookUI.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace FacebookUI
 {
@@ -10,7 +9,7 @@ namespace FacebookUI
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new ProfileView());
         }
 
         protected override void OnStart()
