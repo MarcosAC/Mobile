@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +19,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    private EditText etEmail, etSenha;
+    private Button btEntrar;
+    private TextView tvCriarConta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +42,28 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        TextView tvCriarConta =findViewById(R.id.tvCriarConta);
+        etEmail = findViewById(R.id.etEmail);
+        etSenha = findViewById(R.id.etSenha);
+        btEntrar = findViewById(R.id.btEntrar);
+        tvCriarConta = findViewById(R.id.tvCriarConta);
+
+        btEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = etEmail.getText().toString();
+                String senha = etSenha.getText().toString();
+
+                if (!email.isEmpty()) {
+                    if (!senha.isEmpty()) {
+
+                    } else {
+                        Toast.makeText(MainActivity.this, "Preencha a senha!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "Preencha o email!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         tvCriarConta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,4 +73,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void validarLogin() {}
 }
