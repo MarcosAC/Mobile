@@ -1,0 +1,68 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "gibidex",
+            "cwd": "Flutter\\gibidex",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "gibidex (profile mode)",
+            "cwd": "Flutter\\gibidex",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "gibidex (release mode)",
+            "cwd": "Flutter\\gibidex",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "herocard_lor_jme",
+            "cwd": "Flutter\\herocard_lor_jme",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "herocard_lor_jme (profile mode)",
+            "cwd": "Flutter\\herocard_lor_jme",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "herocard_lor_jme (release mode)",
+            "cwd": "Flutter\\herocard_lor_jme",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "tamagochi",
+            "cwd": "Flutter\\tamagochi",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "tamagochi (profile mode)",
+            "cwd": "Flutter\\tamagochi",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "tamagochi (release mode)",
+            "cwd": "Flutter\\tamagochi",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
