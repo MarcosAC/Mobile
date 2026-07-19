@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:inmediam/core/services/feedback_service.dart';
-
+import 'package:inmediam/features/inspection/presentation/widgets/circular_stat_card.dart';
 import '../../../inspection/presentation/pages/dashboard_page.dart';
+import '../../../inspection/presentation/widgets/top_curve_clipper.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -9,129 +9,120 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 300,
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Color(0xFFF15A24), Color(0xFFFF8C00)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+            ClipPath(
+              clipper: TopCurveClipper(),
+              child: Container(
+                height: 260,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFF15A24), Color(0xFFFF914D)],
+                  ),
                 ),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(80),
-                ),
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(Icons.home_work, size: 80, color: Colors.white),
-                    const SizedBox(height: 10),
-                    const Text(
-                      "InsPect",
-                      style: TextStyle(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                child: const Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.home_work, size: 60, color: Colors.white),
+                      SizedBox(height: 4),
+                      Text(
+                        "InSpect",
+                        style: TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   const Text(
-                    "Boas-Vindas ao Inspect",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    "Boas-vindas ao InInspect",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
                     decoration: InputDecoration(
-                      labelText: "Email",
+                      hintText: "Email",
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 12),
                   TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
-                      labelText: "Password",
+                      hintText: "Password",
                       suffixIcon: const Icon(Icons.visibility_off),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFFF15A24),
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 14),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusGeometry.circular(10),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    onPressed: () {
-                      FeedbackService.showMessage(
-                        "Login Realizado com sucesso!",
-                        type: FeedbackType.sucess,
-                      );
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_) => DashboardPage()),
-                      );
-                    },
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const DashboardPage()),
+                    ),
                     child: const Text(
-                      "Entrar",
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 12),
                   const Text(
                     "ou",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.grey),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 12),
                   Row(
                     children: [
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.person,
-                            color: Color(0xFFF15A24),
-                          ),
-                          label: const Text(
-                            "Corretor",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
+                      CircularStatCard(
+                        label: "Quero ser Correto",
+                        value: "",
+                        icon: Icons.group,
+                        color: Colors.orange,
                       ),
-                      const SizedBox(height: 12),
-                      Expanded(
-                        child: OutlinedButton.icon(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.admin_panel_settings,
-                            color: Color(0xFFF15A24),
-                          ),
-                          label: const Text(
-                            "Admin",
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
+                      const SizedBox(width: 8),
+                      CircularStatCard(
+                        label: "Administrador",
+                        value: "",
+                        icon: Icons.person,
+                        color: Colors.orange,
                       ),
                     ],
+                  ),
+                  const SizedBox(height: 16),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      "Já tenho conta",
+                      style: TextStyle(color: Color(0xFFF15A24)),
+                    ),
                   ),
                 ],
               ),

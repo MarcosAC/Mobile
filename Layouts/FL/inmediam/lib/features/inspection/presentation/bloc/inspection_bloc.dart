@@ -57,7 +57,7 @@ class InspectionBloc extends Bloc<InspectionEvent, InspectionState> {
       }).toList();
 
       emit(currentState.copyWith(checklist: updateList));
-      FeedbackService.showMessage("Status do item atualizado!", type: FeedbackType.sucess);
+      FeedbackService.showMessage("Status do item atualizado!", type: FeedbackType.success);
     }
   }
   
@@ -74,7 +74,7 @@ class InspectionBloc extends Bloc<InspectionEvent, InspectionState> {
       }).toList();
 
       emit(currentState.copyWith(checklist: updateList));
-      FeedbackService.showMessage("Mídia anexada com sucesso!", type: FeedbackType.sucess);
+      FeedbackService.showMessage("Mídia anexada com sucesso!", type: FeedbackType.success);
     }
   }
   

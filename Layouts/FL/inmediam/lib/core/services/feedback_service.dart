@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum FeedbackType { sucess, error, info }
+enum FeedbackType { success, error, info }
 
 class FeedbackService {
   static final GlobalKey<ScaffoldMessengerState> messengerKey =
@@ -20,7 +20,7 @@ class FeedbackService {
     IconData icon;
 
     switch (type) {
-      case FeedbackType.sucess:
+      case FeedbackType.success:
         backgroundColor = Colors.green.shade700;
         icon = Icons.check_circle_outline;
         break;
