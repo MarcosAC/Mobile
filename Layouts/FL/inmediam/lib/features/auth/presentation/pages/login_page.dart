@@ -192,22 +192,24 @@ class _LoginForm extends StatelessWidget {
           style: TextStyle(color: Colors.grey),
         ),
         const SizedBox(height: 12),
-        Row(
-          children: [
-            CircularStatCard(
-              label: "Quero ser Correto",
-              value: "",
-              icon: Icons.group,
-              color: Colors.orange,
-            ),
-            const SizedBox(width: 8),
-            CircularStatCard(
-              label: "Administrador",
-              value: "",
-              icon: Icons.person,
-              color: Colors.orange,
-            ),
-          ],
+        IntrinsicHeight(
+          child: Row(
+            children: [
+              CircularStatCard(
+                label: "Quero ser Correto",
+                value: "",
+                icon: Icons.group,
+                color: Colors.orange,
+              ),
+              const SizedBox(width: 8),
+              CircularStatCard(
+                label: "Administrador",
+                value: "",
+                icon: Icons.person,
+                color: Colors.orange,
+              ),
+            ],
+          ),
         ),
         const SizedBox(height: 16),
         TextButton(
